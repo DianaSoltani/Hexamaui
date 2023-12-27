@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HexaMaui</name>
+    </assembly>
+    <members>
+        <member name="F:HexaMaui.HexDirections.HexDirection">
+            <summary>
+            <list type="bullet">
+             <item> 0 : (Pointy) Top Right, (Flat) Top Right</item>
+             <item> 1 : (Pointy) , (Flat) </item>
+             <item> 2 : (Pointy) , (Flat) </item>
+             <item> 3 : (Pointy) , (Flat) </item>
+             <item> 4 : (Pointy) , (Flat) </item>
+             <item> 5 : (Pointy) , (Flat) </item>
+             </list>
+            </summary>
+        </member>
+        <member name="M:HexaMaui.HexDirections.GetHexDirection(System.Int32)">
+            <summary>
+            Returns the correct one tile translation vector for the intended direction.
+            </summary>
+            <param name="direction"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+        </member>
+        <member name="F:HexaMaui.HexagonMath.InteriorAngle">
+            <summary>
+            The interior angle to a regular hexagon.
+            </summary>
+        </member>
+        <member name="F:HexaMaui.HexagonMath.Size">
+            <summary>
+            This is considered the radius of an outer circle that would be touching the edges of the hexagon.
+            </summary>
+        </member>
+    </members>
+</doc>
