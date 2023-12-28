@@ -30,7 +30,7 @@
     <AppXManifest Include="C:\Users\dylan\source\repos\Hexamaui\HexamauiAppSample\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2023-12-28T02:53:53.792</Modified>
+      <Modified>2023-12-28T03:05:35.513</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -44,15 +44,15 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\dylan\source\repos\Hexamaui\HexamauiAppSample\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\HexamauiAppSample.dll">
       <PackagePath>HexamauiAppSample.dll</PackagePath>
-      <Modified>2023-12-28T02:53:53.454</Modified>
+      <Modified>2023-12-28T03:05:35.232</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\dylan\source\repos\Hexamaui\HexaMaui\bin\Debug\net8.0-windows10.0.19041.0\HexaMaui.dll">
       <PackagePath>HexaMaui.dll</PackagePath>
-      <Modified>2023-12-27T22:27:09.994</Modified>
+      <Modified>2023-12-28T03:03:12.769</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\dylan\source\repos\Hexamaui\HexamauiAppSample\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>HexamauiAppSample.exe</PackagePath>
-      <Modified>2023-12-28T02:53:53.458</Modified>
+      <Modified>2023-12-28T03:05:35.234</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\dylan\source\repos\Hexamaui\HexamauiAppSample\Resources\Raw\AboutAssets.txt">
       <PackagePath>AboutAssets.txt</PackagePath>

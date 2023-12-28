@@ -7,9 +7,11 @@
         <hex:HexagonBorder x:Key="HexagonBorder"/>
     </ContentPage.Resources>
    
-    <ScrollView>
+    <AbsoluteLayout
+        HorizontalOptions="CenterAndExpand">
+        
         <hex:HexagonBorder x:Name="border"/>
         <!--<VerticalStackLayout></VerticalStackLayout>-->
-    </ScrollView>
+    </AbsoluteLayout>
 
 </ContentPage>
