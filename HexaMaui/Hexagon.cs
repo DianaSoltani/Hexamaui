@@ -1,6 +1,4 @@
-﻿using System.Numerics;
-
-namespace HexaMaui
+﻿namespace HexaMaui
 {
     // All the code in this file is included in all platforms.
     internal class HexDirections
@@ -61,7 +59,7 @@ namespace HexaMaui
         internal readonly int q;
         internal readonly int r;
         internal readonly int s;
-        internal Hex(int q, int r, int s)
+        public Hex(int q, int r, int s)
         {
             this.q = q;
             this.r = r;
@@ -72,14 +70,14 @@ namespace HexaMaui
                     "Ensure your coodinates sum to 0.");
             }
         }
-        internal Hex(int q, int r)
+        public Hex(int q, int r)
         {
             this.q = q;
             this.r = r;
             this.s = -q - r;
         }
 
-        internal bool Equals(Hex other)
+        public bool Equals(Hex other)
         {
             return this.q == other.q && this.r == other.r && this.s == other.s;
         }
@@ -137,23 +135,58 @@ namespace HexaMaui
     }
     public class Hexagon : GraphicsView
     {
-        internal Point HexCornerOffset(Layout layout, int corner)
+        internal static Point HexCornerOffset(HexagonLayout layout, int corner)
         {
             Point size = layout.Size;
             double angle = 2.0 * Math.PI * (layout.HexOrientation.startAngle + corner) / 6;
             return new Point(size.X * Math.Cos(angle), size.Y * Math.Sin(angle));
         }
-        public Vector<Point> HexagonCorners(Layout layout, Hex hex)
+
+        private static float LinearInterpolation(double a, double b, double t)
         {
-            Vector<Point> corners = new Vector<Point>();
-            Point center = HexaMaui.Layout.HexToPixel(layout, hex);
+            return (float)(a * (1 - t) + b * t);
+        }
+
+        internal static FractionalHex HexLinearInterpolation(FractionalHex a, FractionalHex b, double t)
+        {
+            return new FractionalHex(
+                        LinearInterpolation(a.q, b.q, t),
+                        LinearInterpolation(a.s, b.s, t),
+                        LinearInterpolation(a.r, b.r, t)
+                   );
+        }
+        public static List<Point> HexagonCorners(HexagonLayout layout, Hex hex)
+        {
+            List<Point> corners = new List<Point>();
+            Point center = HexaMaui.HexagonLayout.HexToPixel(layout, hex);
             for (int i = 0; i < 6; i++)
             {
                 Point offset = HexCornerOffset(layout, i);
-                corners = corners + new Vector<Point>(offset);
+                corners.Add(offset);
             }
             return corners;
         }
+
+        /// <summary>
+        /// Todo:
+        /// </summary>
+        /// <param name="a">Hex</param>
+        /// <param name="b">Hex</param>
+        /// <returns>List<Hex> object.</Hex></returns>
+        public static List<Hex> HexLinedraw(Hex a, Hex b)
+        {
+            int distance = a.DistanceTo(b);
+            List<Hex> result = new List<Hex>();
+            FractionalHex a_nudge = new FractionalHex(a.q + 1e-06, a.r + 1e-06, a.s - 2e-06);
+            FractionalHex b_nudge = new FractionalHex(b.q + 1e-06, b.r + 1e-06, b.s - 2e-06);
+            double step = 1.0 / Math.Max(distance, 1);
+            for (int i = 0; i <= distance; i++)
+            {
+                result.Add(Hex.HexRound(HexLinearInterpolation(a_nudge, b_nudge, step * i)));
+            }
+            return result;
+        }
+
 
     }
 }

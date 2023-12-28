@@ -23,7 +23,7 @@
             this.startAngle = startAngle;
         }
 
-        public Orientation PointyLayout =
+        public static readonly Orientation PointyLayout =
             new(
                 Math.Sqrt(3.0),
                 Math.Sqrt(3.0)/2.0,
@@ -35,7 +35,7 @@
                 2.0/3.0,
                 0.5
             );
-        public Orientation FlatLayout = 
+        public static readonly Orientation FlatLayout = 
             new(
                 Math.Sqrt(3.0),
                 Math.Sqrt(3.0)/2.0, 

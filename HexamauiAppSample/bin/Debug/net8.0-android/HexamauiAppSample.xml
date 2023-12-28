@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HexamauiAppSample</name>
+    </assembly>
+    <members>
+        <member name="M:HexamauiAppSample.HexagonBorder.DefaultBuilder">
+            <summary>
+            Copied from documentation - example of setters.
+            </summary>
+        </member>
+    </members>
+</doc>

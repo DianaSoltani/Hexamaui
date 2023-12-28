@@ -1,0 +1,2 @@
+C:\Users\dylan\source\repos\Hexamaui\HexaMaui\HexaMaui.csproj;neutral
+C:\Users\dylan\source\repos\Hexamaui\HexamauiAppSample\HexamauiAppSample.csproj;x64
