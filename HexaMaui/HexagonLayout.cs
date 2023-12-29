@@ -3,7 +3,13 @@
     public class HexagonLayout
     {
         public Orientation HexOrientation;
+        /// <summary>
+        /// Scale transformation to determine the size of the hexagon.
+        /// </summary>
         public Point Size;
+        /// <summary>
+        /// Sets the center of the q=0, r=0 hexagon. 
+        /// </summary>
         public Point Origin;
 
         public HexagonLayout(Orientation orientation, Point size, Point origin) 

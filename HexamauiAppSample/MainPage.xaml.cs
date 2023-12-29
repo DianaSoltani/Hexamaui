@@ -12,7 +12,7 @@
         private void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
         {
             borderTest.Background = Colors.DarkRed;
-            Thread.Sleep(1000);
+            Thread.Sleep(10000);
             borderTest.Background = Color.FromArgb("#2B0B98");
         }
     }

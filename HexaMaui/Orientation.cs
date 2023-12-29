@@ -12,7 +12,7 @@
             double startAngle
         )
         {
-            this.f0 = f0; 
+            this.f0 = f0;
             this.f1 = f1;
             this.f2 = f2;
             this.f3 = f3;
@@ -26,26 +26,26 @@
         public static readonly Orientation PointyLayout =
             new(
                 Math.Sqrt(3.0),
-                Math.Sqrt(3.0)/2.0,
+                Math.Sqrt(3.0) / 2.0,
                 0.0,
-                3.0/2.0,
-                Math.Sqrt(3.0)/3.0,
-                -1.0/3.0,
+                3.0 / 2.0,
+                Math.Sqrt(3.0) / 3.0,
+                -1.0 / 3.0,
                 0.0,
-                2.0/3.0,
+                2.0 / 3.0,
                 0.5
             );
-        public static readonly Orientation FlatLayout = 
+        public static readonly Orientation FlatLayout =
             new(
+                3.0 / 2.0,
+                0.0,
+                Math.Sqrt(3.0) / 2.0,
                 Math.Sqrt(3.0),
-                Math.Sqrt(3.0)/2.0, 
-                0.0, 
-                3.0/2.0,
-                Math.Sqrt(3.0)/3.0, 
-                -1.0/3.0, 
-                0.0, 
-                2.0/3.0,
-                0.5
-            );
+                2.0 / 3.0,
+                0.0,
+                -1.0 / 3.0,
+                Math.Sqrt(3.3)/3.0,
+                0.0
+           );
     }
 }

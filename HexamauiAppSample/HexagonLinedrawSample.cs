@@ -20,16 +20,16 @@ namespace HexamauiAppSample
 
     public class HexagonBorder : Border
     {
-        /*
-        IView content;
-        Thickness padding;
-        Brush stroke;
-        double strokeThickness;
-        DoubleCollection strokeDashArray;
-        double strokeDashOffset;
-        PenLineCap strokeLineCap;
-        PenLineJoin strokeLineJoin;
-        double strokeMiterLimit;*/
+        /// <summary>
+        /// Determines which natural orientation you want the hexagon to be in -- FlatLayout or PointyLayout
+        /// </summary>
+        public Orientation Orientation { get; set; }
+
+        /// <summary>
+        /// The size of a hexagon here is defined as the farthest point from the center of the hexagon (touching the corners of the shape)
+        /// </summary>
+        public Point Size { get; set; }
+
 
 
         public HexagonBorder()
@@ -38,45 +38,35 @@ namespace HexamauiAppSample
         }
 
         /// <summary>
-        /// Copied from documentation - example of setters.
+        /// Copied from documentation on borders - example of setters.
         /// </summary>
-        public void DefaultBuilder()
+        private void DefaultBuilder()
         {
             Orientation orientation = Orientation.PointyLayout;
             HexagonLayout layout = new HexagonLayout(orientation, new Point(50,50), new Point(0,0));
             Hex hex = new Hex(0,0);
             List<Point> points = Hexagon.HexagonCorners(layout, hex);
             PointCollection pointCollection = new PointCollection(points.ToArray());
-            Border border = new Border
+            
+            this.Stroke = Color.FromArgb("#C49B33");
+            this.Background = Color.FromArgb("#2B0B98");
+            this.StrokeThickness =2;
+            this.Padding = new Thickness(50, 50);
+            this.HorizontalOptions = LayoutOptions.Center;
+            this.VerticalOptions = LayoutOptions.Center;
+            this.StrokeShape = new Polygon
             {
-                Stroke = Color.FromArgb("#C49B33"),
-                Background = Color.FromArgb("#2B0B98"),
-                StrokeThickness =2,
-                Padding = new Thickness(50, 50),
-                HorizontalOptions = LayoutOptions.Center,
-                VerticalOptions = LayoutOptions.Center,
-                StrokeShape = new Polygon
-                {
-                    Points = pointCollection
-                },
-                Content = new Label
-                {
-                    Text = "12",
-                    TextColor = Colors.Gray,
-                    FontSize = 18,
-                    FontAttributes = FontAttributes.Bold,
-                }
+                Points = pointCollection
             };
-            this.Stroke = border.Stroke;
-            this.Background = border.Background;
-            this.StrokeThickness = border.StrokeThickness;
-            this.Padding = border.Padding;
-            this.HorizontalOptions = border.HorizontalOptions;
-            this.VerticalOptions = border.VerticalOptions;
-            this.StrokeShape = border.StrokeShape;
-            this.Content = border.Content;
-            this.Content.HorizontalOptions = border.HorizontalOptions;
-            this.Content.VerticalOptions = border.VerticalOptions;
+            this.Content = new Label
+            {
+                Text = "102",
+                TextColor = Colors.Black,
+                FontSize = 10,
+                FontAttributes = FontAttributes.Bold,
+                FontAutoScalingEnabled = true,
+            };
+            
             
         }
     }
