@@ -6,12 +6,17 @@
     <ContentPage.Resources>
         <hex:HexagonBorder x:Key="HexagonBorder"/>
     </ContentPage.Resources>
-   
+
+    <!-- https://learn.microsoft.com/en-us/dotnet/maui/user-interface/layouts/?view=net-maui-8.0#absolutelayout -->
     <AbsoluteLayout
+        VerticalOptions="CenterAndExpand"
         HorizontalOptions="CenterAndExpand">
-        
-        <hex:HexagonBorder x:Name="border"/>
-        <!--<VerticalStackLayout></VerticalStackLayout>-->
+
+        <hex:HexagonBorder x:Name="borderTest">
+            <hex:HexagonBorder.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+            </hex:HexagonBorder.GestureRecognizers>
+        </hex:HexagonBorder>
     </AbsoluteLayout>
 
 </ContentPage>

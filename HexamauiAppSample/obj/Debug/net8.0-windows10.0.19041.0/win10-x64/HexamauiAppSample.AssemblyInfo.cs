@@ -18,7 +18,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HexamauiAppSample")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+aff47f5215cbff361f49a3b31eabc71b73636aac")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+4c53b0eaece35df2123405f32073bc15bd736d4e")]
 [assembly: System.Reflection.AssemblyProductAttribute("HexamauiAppSample")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HexamauiAppSample")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

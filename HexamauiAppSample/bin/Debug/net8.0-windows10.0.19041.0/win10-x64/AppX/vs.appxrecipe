@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Users\dylan\source\repos\Hexamaui\HexamauiAppSample\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2023-12-28T03:05:35.513</Modified>
+      <Modified>2023-12-29T03:00:51.151</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\dylan\source\repos\Hexamaui\HexamauiAppSample\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2023-12-28T02:53:53.663</Modified>
+      <Modified>2023-12-28T17:58:37.211</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\dylan\source\repos\Hexamaui\HexamauiAppSample\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\HexamauiAppSample.runtimeconfig.json">
       <PackagePath>HexamauiAppSample.runtimeconfig.json</PackagePath>
@@ -44,15 +44,15 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\dylan\source\repos\Hexamaui\HexamauiAppSample\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\HexamauiAppSample.dll">
       <PackagePath>HexamauiAppSample.dll</PackagePath>
-      <Modified>2023-12-28T03:05:35.232</Modified>
+      <Modified>2023-12-29T03:00:50.407</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\dylan\source\repos\Hexamaui\HexaMaui\bin\Debug\net8.0-windows10.0.19041.0\HexaMaui.dll">
       <PackagePath>HexaMaui.dll</PackagePath>
-      <Modified>2023-12-28T03:03:12.769</Modified>
+      <Modified>2023-12-29T03:00:48.211</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\dylan\source\repos\Hexamaui\HexamauiAppSample\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>HexamauiAppSample.exe</PackagePath>
-      <Modified>2023-12-28T03:05:35.234</Modified>
+      <Modified>2023-12-29T03:00:50.446</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\dylan\source\repos\Hexamaui\HexamauiAppSample\Resources\Raw\AboutAssets.txt">
       <PackagePath>AboutAssets.txt</PackagePath>
@@ -292,7 +292,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\dylan\source\repos\Hexamaui\HexamauiAppSample\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\HexamauiAppSample.deps.json">
       <PackagePath>HexamauiAppSample.deps.json</PackagePath>
-      <Modified>2023-12-28T02:47:43.480</Modified>
+      <Modified>2023-12-28T17:58:11.978</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\dylan\.nuget\packages\microsoft.windows.sdk.net.ref\10.0.19041.31\lib\net6.0\Microsoft.Windows.SDK.NET.dll">
       <PackagePath>Microsoft.Windows.SDK.NET.dll</PackagePath>

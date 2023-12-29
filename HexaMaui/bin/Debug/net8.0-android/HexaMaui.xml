@@ -37,6 +37,21 @@
             d
             </summary>
         </member>
+        <member name="T:HexaMaui.HexagonalGridShapes">
+            <summary>
+            Creates the grid shape by correctly filling in a 2 dimensional data structure of Hexes
+            </summary>
+        </member>
+        <member name="M:HexaMaui.HexagonalGridShapes.GetMapShapes(System.Collections.Generic.List{HexaMaui.Hex},System.String,System.String)">
+            <summary>
+            Todo:
+            </summary>
+            <param name="hexList"></param>
+            <param name="orientation"></param>
+            <param name="shape"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
         <member name="F:HexaMaui.HexagonMath.InteriorAngle">
             <summary>
             The interior angle to a regular hexagon.
