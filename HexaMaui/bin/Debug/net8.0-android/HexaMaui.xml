@@ -4,7 +4,7 @@
         <name>HexaMaui</name>
     </assembly>
     <members>
-        <member name="F:HexaMaui.HexDirections.HexDirection">
+        <member name="F:HexaMaui.Hex.HexDirections">
             <summary>
             <list type="bullet">
              <item> 0 : (Pointy) Top Right, (Flat) Top Right</item>
@@ -15,14 +15,6 @@
              <item> 5 : (Pointy) , (Flat) </item>
              </list>
             </summary>
-        </member>
-        <member name="M:HexaMaui.HexDirections.GetHexDirection(System.Int32)">
-            <summary>
-            Returns the correct one tile translation vector for the intended direction.
-            </summary>
-            <param name="direction"></param>
-            <returns></returns>
-            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
         </member>
         <member name="M:HexaMaui.Hexagon.HexLinedraw(HexaMaui.Hex,HexaMaui.Hex)">
             <summary>

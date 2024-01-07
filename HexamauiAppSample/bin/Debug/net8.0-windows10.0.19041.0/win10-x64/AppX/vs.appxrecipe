@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Users\dylan\source\repos\Hexamaui\HexamauiAppSample\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2023-12-29T03:49:59.701</Modified>
+      <Modified>2024-01-07T18:01:23.105</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\dylan\source\repos\Hexamaui\HexamauiAppSample\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2023-12-29T03:49:59.580</Modified>
+      <Modified>2024-01-07T18:01:22.991</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\dylan\source\repos\Hexamaui\HexamauiAppSample\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\HexamauiAppSample.runtimeconfig.json">
       <PackagePath>HexamauiAppSample.runtimeconfig.json</PackagePath>
@@ -44,15 +44,15 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\dylan\source\repos\Hexamaui\HexamauiAppSample\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\HexamauiAppSample.dll">
       <PackagePath>HexamauiAppSample.dll</PackagePath>
-      <Modified>2023-12-29T03:49:59.413</Modified>
+      <Modified>2024-01-07T18:01:22.827</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\dylan\source\repos\Hexamaui\HexaMaui\bin\Debug\net8.0-windows10.0.19041.0\HexaMaui.dll">
       <PackagePath>HexaMaui.dll</PackagePath>
-      <Modified>2023-12-29T03:49:17.660</Modified>
+      <Modified>2024-01-07T17:32:42.805</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\dylan\source\repos\Hexamaui\HexamauiAppSample\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>HexamauiAppSample.exe</PackagePath>
-      <Modified>2023-12-29T03:49:59.416</Modified>
+      <Modified>2024-01-07T18:01:22.830</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\dylan\source\repos\Hexamaui\HexamauiAppSample\Resources\Raw\AboutAssets.txt">
       <PackagePath>AboutAssets.txt</PackagePath>

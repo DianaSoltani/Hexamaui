@@ -19,20 +19,20 @@
             Origin = origin;
         }
 
-        public static Point HexToPixel(HexagonLayout layout, Hex hex)
+        public Point HexToPixel(Hex hex)
         {
-            Orientation currentOrientation = layout.HexOrientation;
-            double x = (currentOrientation.f0 * hex.q + currentOrientation.f1 * hex.r) * layout.Size.X;
-            double y = (currentOrientation.f2 * hex.q + currentOrientation.f3 * hex.r) * layout.Size.Y;
-            return new Point(x + layout.Origin.X, y + layout.Origin.Y);
+            Orientation currentOrientation = this.HexOrientation;
+            double x = (currentOrientation.f0 * hex.q + currentOrientation.f1 * hex.r) * this.Size.X;
+            double y = (currentOrientation.f2 * hex.q + currentOrientation.f3 * hex.r) * this.Size.Y;
+            return new Point(x + this.Origin.X, y + this.Origin.Y);
         }
 
-        public static FractionalHex PixelToHex(HexagonLayout layout, Point point) 
+        public FractionalHex PixelToHex(Point point) 
         {
-            Orientation currentOrientation = layout.HexOrientation;
+            Orientation currentOrientation = this.HexOrientation;
             Point pointCalculated = new Point(
-                                            point.X - layout.Origin.X / layout.Size.X ,
-                                            point.Y - layout.Origin.Y / layout.Size.Y
+                                            point.X - this.Origin.X / this.Size.X ,
+                                            point.Y - this.Origin.Y / this.Size.Y
                                     );
             double q = currentOrientation.b0 * pointCalculated.X + currentOrientation.b1 * pointCalculated.Y;
             double r = currentOrientation.b2 * pointCalculated.X + currentOrientation.b3 * pointCalculated.Y;

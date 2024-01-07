@@ -5,18 +5,15 @@
              x:Class="HexamauiAppSample.MainPage">
     <ContentPage.Resources>
         <hex:HexagonBorder x:Key="HexagonBorder"/>
+        <hex:HexGridTest x:Key="HexGridTest" />
     </ContentPage.Resources>
 
     <!-- https://learn.microsoft.com/en-us/dotnet/maui/user-interface/layouts/?view=net-maui-8.0#absolutelayout -->
-    <AbsoluteLayout
+    <!--AbsoluteLayout
         VerticalOptions="CenterAndExpand"
         HorizontalOptions="CenterAndExpand">
-
         <hex:HexagonBorder x:Name="borderTest">
-            <hex:HexagonBorder.GestureRecognizers>
-                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
-            </hex:HexagonBorder.GestureRecognizers>
         </hex:HexagonBorder>
-    </AbsoluteLayout>
+    </AbsoluteLayout -->
 
 </ContentPage>

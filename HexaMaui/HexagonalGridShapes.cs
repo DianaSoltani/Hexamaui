@@ -75,7 +75,7 @@
 
         internal static List<Hex> HexagonalGridFill(List<Hex> hexGrid)
         {
-            int n = hexGrid.Count() / 2;
+            int n = hexGrid.Capacity / 2;
             for (int q = -n; q <= n; q++)
             {
                 int r1 = Math.Max(-n, -q - n);

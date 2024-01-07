@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HexaMaui")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+20f471fa500475d4595f5bfce124580766858749")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+75e53216e45d67e653c3db00e6b06cdc283df6fe")]
 [assembly: System.Reflection.AssemblyProductAttribute("HexaMaui")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HexaMaui")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

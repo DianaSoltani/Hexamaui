@@ -1,53 +1,10 @@
 ﻿namespace HexaMaui
 {
     // All the code in this file is included in all platforms.
-    internal class HexDirections
-    {
-        /// <summary>
-        /// <list type="bullet">
-        ///  <item> 0 : (Pointy) Top Right, (Flat) Top Right</item>
-        ///  <item> 1 : (Pointy) , (Flat) </item>
-        ///  <item> 2 : (Pointy) , (Flat) </item>
-        ///  <item> 3 : (Pointy) , (Flat) </item>
-        ///  <item> 4 : (Pointy) , (Flat) </item>
-        ///  <item> 5 : (Pointy) , (Flat) </item>
-        ///  </list>
-        /// </summary>
-        private readonly IEnumerable<Hex> HexDirection = new List<Hex>
-        {
-            new(1,0,-1),
-            new(1,-1,0),
-            new(0,-1,1),
-            new(-1,0,1),
-            new(-1,1,0),
-            new(0,1,-1)
-        };
-
-        /// <summary>
-        /// Returns the correct one tile translation vector for the intended direction.
-        /// </summary>
-        /// <param name="direction"></param>
-        /// <returns></returns>
-        /// <exception cref="ArgumentOutOfRangeException"></exception>
-        internal Hex GetHexDirection(int direction)
-        {
-            if (direction < 0 || direction > 5)
-            {
-                throw new ArgumentOutOfRangeException("HexDirection expects a range from 0 to 5.");
-            }
-            return HexDirection.ElementAt(direction);
-        }
-
-        internal Hex HexNeighbor(Hex hex, int direction)
-        {
-            return Hex.HexAdd(hex, GetHexDirection(direction));
-        }
-    }
-
     public class FractionalHex
     {
-        internal double q, r, s;
-        internal FractionalHex(double q, double r, double s)
+        public double q, r, s;
+        public FractionalHex(double q, double r, double s)
         {
             this.q = q;
             this.r = r;
@@ -56,9 +13,9 @@
     }
     public class Hex
     {
-        internal readonly int q;
-        internal readonly int r;
-        internal readonly int s;
+        public readonly int q;
+        public readonly int r;
+        public readonly int s;
         public Hex(int q, int r, int s)
         {
             this.q = q;
@@ -82,34 +39,46 @@
             return this.q == other.q && this.r == other.r && this.s == other.s;
         }
 
-        internal static bool Equals(Hex a, Hex b)
+        public Hex Add(Hex b)
         {
-            return a.q == b.q && a.s == b.s && a.r == b.r;
+            return new Hex(q + b.q, r + b.r, s + b.s);
         }
 
-        internal static Hex HexAdd(Hex a, Hex b)
+
+        public Hex Subtract(Hex b)
         {
-            return new(a.q + b.q, a.r + b.r, a.s + b.s);
-        }
-        internal static Hex HexSubtract(Hex a, Hex b)
-        {
-            return new(a.q - b.q, a.r - b.r, a.s - b.s);
-        }
-        internal static Hex HexMultiply(Hex a, int k)
-        {
-            return new(a.q * k, a.r * k, a.s * k);
+            return new Hex(q - b.q, r - b.r, s - b.s);
         }
 
-        internal int Length()
+
+        public Hex Scale(int k)
+        {
+            return new Hex(q * k, r * k, s * k);
+        }
+
+
+        public Hex RotateLeft()
+        {
+            return new Hex(-s, -q, -r);
+        }
+
+
+        public Hex RotateRight()
+        {
+            return new Hex(-r, -s, -q);
+
+        }
+
+        public int Length()
         {
             return (Math.Abs(q) + Math.Abs(r) + Math.Abs(s)) / 2;
         }
-        internal int DistanceTo(Hex destination)
+        public int DistanceTo(Hex destination)
         {
-            return HexSubtract(this, destination).Length();
+            return Subtract(destination).Length();
         }
 
-        internal static Hex HexRound(FractionalHex hex)
+        public static Hex HexRound(FractionalHex hex)
         {
             int qInt = (int)(Math.Round(hex.q));
             int rInt = (int)(Math.Round(hex.r));
@@ -132,37 +101,83 @@
             }
             return new Hex(qInt, rInt, sInt);
         }
+        /// <summary>
+        /// <list type="bullet">
+        ///  <item> 0 : (Pointy) Top Right, (Flat) Top Right</item>
+        ///  <item> 1 : (Pointy) , (Flat) </item>
+        ///  <item> 2 : (Pointy) , (Flat) </item>
+        ///  <item> 3 : (Pointy) , (Flat) </item>
+        ///  <item> 4 : (Pointy) , (Flat) </item>
+        ///  <item> 5 : (Pointy) , (Flat) </item>
+        ///  </list>
+        /// </summary>
+        public static readonly List<Hex> HexDirections = new List<Hex>
+            {
+                new Hex(1, 0, -1),
+                new Hex(1, -1, 0),
+                new Hex(0, -1, 1),
+                new Hex(-1, 0, 1),
+                new Hex(-1, 1, 0),
+                new Hex(0, 1, -1)
+            };
+
+        public static readonly List<Hex> HexDiagonals = new List<Hex>
+        {
+            new(2, -1, -1),
+            new(1, -2, 1),
+            new(-1, -1, 2),
+            new(-2, 1, 1),
+            new(-1, 2, -1),
+            new (1, 1, -2)
+        };
+        static public Hex Direction(int direction)
+        {
+            return Hex.HexDirections[direction];
+        }
+
+
+        public Hex Neighbor(int direction)
+        {
+            return Add(Hex.Direction(direction));
+        }
+
+        public Hex DiagonalNeighbor(int direction)
+        {
+            return Add(HexDiagonals[direction]);
+        }
+
     }
     public class Hexagon : GraphicsView
     {
-        internal static Point HexCornerOffset(HexagonLayout layout, int corner)
+        public static Point HexCornerOffset(HexagonLayout layout, int corner)
         {
             Point size = layout.Size;
-            double angle = 2.0 * Math.PI * (layout.HexOrientation.startAngle + corner) / 6;
+            double angle = 2.0 * Math.PI * (layout.HexOrientation.startAngle - corner) / 6;
             return new Point(size.X * Math.Cos(angle), size.Y * Math.Sin(angle));
         }
 
         private static float LinearInterpolation(double a, double b, double t)
         {
-            return (float)(a * (1 - t) + b * t);
+            return (float)(a * (1.0 - t) + b * t);
         }
 
-        internal static FractionalHex HexLinearInterpolation(FractionalHex a, FractionalHex b, double t)
+        public static FractionalHex HexLinearInterpolation(FractionalHex a, FractionalHex b, double t)
         {
             return new FractionalHex(
                         LinearInterpolation(a.q, b.q, t),
-                        LinearInterpolation(a.s, b.s, t),
-                        LinearInterpolation(a.r, b.r, t)
+                        LinearInterpolation(a.r, b.r, t),
+                        LinearInterpolation(a.s, b.s, t)
                    );
         }
-        public static List<Point> HexagonCorners(HexagonLayout layout, Hex hex)
+        public static List<Point> HexagonPolygonCorners(HexagonLayout layout, Hex hex)
         {
             List<Point> corners = new List<Point>();
-            Point center = HexaMaui.HexagonLayout.HexToPixel(layout, hex);
+            Point center = layout.HexToPixel(hex);
             for (int i = 0; i < 6; i++)
             {
                 Point offset = HexCornerOffset(layout, i);
-                corners.Add(offset);
+                Point adjustedPoint = new Point(center.X + offset.X, center.Y + offset.Y);
+                corners.Add(adjustedPoint);
             }
             return corners;
         }
