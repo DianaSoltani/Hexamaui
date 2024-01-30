@@ -44,7 +44,7 @@
         {
             if (string.Equals(Parallelogram, shape, StringComparison.OrdinalIgnoreCase))
             {
-                throw new NotImplementedException();
+                ParallelogramGridFill(hexList, orientation);
             }
             else if (string.Equals(Triangle, shape, StringComparison.OrdinalIgnoreCase))
             {
@@ -86,6 +86,41 @@
                 }
             }
             return hexGrid;
+        }
+
+        internal static List<Hex> ParallelogramGridFill(List<Hex> hexGrid, string orientation)
+        {
+            throw new NotImplementedException();
+            /*
+            if (string.Equals(GridOrientationConsts.PointyTopLeft, orientation, StringComparison.OrdinalIgnoreCase))
+            {
+
+            }
+            else if (string.Equals(GridOrientationConsts.PointyTop, orientation, StringComparison.OrdinalIgnoreCase))
+            {
+
+            }
+            else if (string.Equals(GridOrientationConsts.PointyTopRight, orientation, StringComparison.OrdinalIgnoreCase))
+            {
+
+            }
+            else if (string.Equals(GridOrientationConsts.FlatTopLeft, orientation, StringComparison.OrdinalIgnoreCase))
+            {
+
+            }
+            else if (string.Equals(GridOrientationConsts.FlatTopRight, orientation, StringComparison.OrdinalIgnoreCase))
+            {
+
+            }
+            else if (string.Equals(GridOrientationConsts.FlatTop, orientation, StringComparison.OrdinalIgnoreCase))
+            {
+
+            }
+            else
+            {
+                throw new Exception("An invalid grid orientation was provided. Parallelograms provide the following orientations: PointyTopLeft, PointyTop, PointyTopRight, FlatTopLeft, FlatTopRight, FlatTop.");
+            }
+            return hexGrid;*/
         }
     }
 }
