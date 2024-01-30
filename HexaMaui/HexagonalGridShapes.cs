@@ -63,7 +63,7 @@
                 }
                 else
                 {
-                    throw new NotImplementedException();
+                    HexagonalGridFill(hexList);
                 }
             }
             else if (string.Equals(Rectangle, shape, StringComparison.OrdinalIgnoreCase))
