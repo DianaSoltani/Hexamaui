@@ -6,3 +6,9 @@
 /HexaMaui/bin/Debug/*
 /HexaMaui/obj/*
 /HexaMaui/Properties/launchSettings.json
+*.suo
+*.user
+_ReSharper.*
+bin
+obj
+packages
