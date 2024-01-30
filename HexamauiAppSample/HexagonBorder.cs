@@ -118,8 +118,8 @@ namespace HexamauiAppSample
             AbsoluteLayout absoluteLayout = new AbsoluteLayout();
             absoluteLayout.VerticalOptions = LayoutOptions.Center;
             absoluteLayout.HorizontalOptions = LayoutOptions.Center;
-            absoluteLayout.MaximumHeightRequest = 1000;
-            absoluteLayout.MaximumWidthRequest = 1000;
+            //absoluteLayout.MaximumHeightRequest = 1000;
+            //absoluteLayout.MaximumWidthRequest = 1000;
             Point center = new(absoluteLayout.X, absoluteLayout.Y);
             Point size = new Point(60, 60);
             HexagonLayout hexLayout = new HexagonLayout(Orientation.PointyLayout, size, center);
