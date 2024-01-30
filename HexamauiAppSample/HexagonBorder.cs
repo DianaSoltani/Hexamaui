@@ -139,8 +139,8 @@ namespace HexamauiAppSample
                     Stroke = Color.FromArgb("#C49B33"),
                     Aspect = Stretch.Fill,
                     StrokeThickness = 2,
-                    HeightRequest = size.Y,
-                    WidthRequest = size.X,
+                    //HeightRequest = size.Y,
+                    //WidthRequest = size.X,
                     TranslationX = pixels.X,
                     TranslationY = pixels.Y,
                 });
