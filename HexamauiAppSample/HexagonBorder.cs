@@ -95,24 +95,7 @@ namespace HexamauiAppSample
     public class HexGridTest
     {
         public AbsoluteLayout AbsoluteLayoutVar { get; set; }
-        /*public HexGridTest()
-        {
-            AbsoluteLayout absoluteLayout = new AbsoluteLayout();
-            absoluteLayout.VerticalOptions = LayoutOptions.Center;
-            absoluteLayout.HorizontalOptions = LayoutOptions.Center;
-            Point center = new(absoluteLayout.X, absoluteLayout.Y);
-            Point size = new Point(60, 60);
-            HexagonLayout hexLayout = new HexagonLayout(Orientation.PointyLayout, size, center);  
-            List<Hex> hexes = new List<Hex>(36);
-            hexes = HexagonalGridShapes.GetMapShapes(hexes, GridOrientationConsts.PointyOrientation, HexagonalGridShapes.Hexagon);
-
-            hexes.ForEach(hex =>
-            {
-                var point = new Point(hex.q, hex.r);
-                absoluteLayout.Children.Add(new HexagonBorder(Orientation.PointyLayout, size, center, point));
-            });
-            AbsoluteLayout = absoluteLayout;
-        }*/
+        
         public HexGridTest()
         {
             //Hex Layout Set-Up
@@ -124,6 +107,9 @@ namespace HexamauiAppSample
             HexagonLayout hexLayout = new HexagonLayout(Orientation.FlatLayout, size, center);
             List<Hex> hexes = new List<Hex>(7);
             hexes = HexagonalGridShapes.GetMapShapes(hexes, GridOrientationConsts.FlatOrientation, HexagonalGridShapes.Hexagon);
+
+            int[] lostNumbers = { 4, 8, 15, 16, 23, 42 };
+            int i = 0;
 
             hexes.ForEach(hex =>
             {
@@ -155,8 +141,20 @@ namespace HexamauiAppSample
                     HeightRequest = height - strokeThickness,
                     WidthRequest = width - strokeThickness,
                     StrokeShape = currentHex,
+                    Content = new Label
+                    {
+                        Text = lostNumbers[i++%6].ToString(),
+                        TextColor = Colors.White,
+                        FontSize = 18,
+                        FontAttributes = FontAttributes.Bold,
+                        FontAutoScalingEnabled = true,
+                        MaxLines = 1,
+                        HorizontalOptions = LayoutOptions.Center,
+                        VerticalOptions = LayoutOptions.Center,
+                    },
                 };
                 
+
                 //Tap Gesture Set-Up
                 TapGestureRecognizer HexagonTapGestureRecognizer = new TapGestureRecognizer
                 {
