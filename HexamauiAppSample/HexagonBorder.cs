@@ -95,7 +95,7 @@ namespace HexamauiAppSample
     public class HexGridTest
     {
         public AbsoluteLayout AbsoluteLayoutVar { get; set; }
-        
+
         public HexGridTest()
         {
             //Hex Layout Set-Up
@@ -143,7 +143,7 @@ namespace HexamauiAppSample
                     StrokeShape = currentHex,
                     Content = new Label
                     {
-                        Text = lostNumbers[i++%6].ToString(),
+                        Text = lostNumbers[i++ % 6].ToString(),
                         TextColor = Colors.White,
                         FontSize = 18,
                         FontAttributes = FontAttributes.Bold,
@@ -153,15 +153,14 @@ namespace HexamauiAppSample
                         VerticalOptions = LayoutOptions.Center,
                     },
                 };
-                
 
                 //Tap Gesture Set-Up
                 TapGestureRecognizer HexagonTapGestureRecognizer = new TapGestureRecognizer
                 {
                     Buttons = ButtonsMask.Primary,
                 };
-                HexagonTapGestureRecognizer.Tapped += (s, e) => OnHexagonPrimaryTapped(s!, e); 
-                
+                HexagonTapGestureRecognizer.Tapped += (s, e) => OnHexagonPrimaryTapped(s!, e);
+
                 TapGestureRecognizer HexagonSecondaryTapGestureRecognizer = new TapGestureRecognizer
                 {
                     Buttons = ButtonsMask.Secondary,
