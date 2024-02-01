@@ -17,5 +17,7 @@ Core infrastructure, mathematical operations for the Hexagons are found here.
 Once I finish messing around in HexamauiAppSamples, I hope to add a new project just for default hexagonal grid configurations/hexagons/ui components so that minimal code is required from the user's side. 
 ### HexamauiAppSamples
 This project provides samples for users to test and learn how to use the Hexagon UI.
+What the sample project looks like as of 2/1/2024:
+![image of hexagons with labels within it](images/02012024.png)
 ### HexamauiTests
 Test folder for Hexamaui. 
