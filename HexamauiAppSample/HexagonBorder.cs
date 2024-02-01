@@ -133,7 +133,7 @@ namespace HexamauiAppSample
             {
                 var point = new Point(hex.q, hex.r);
                 Point[] pointsArray = Hexagon.HexagonPolygonCorners(hexLayout, hex).ToArray();
-                PointCollection points = new PointCollection();
+                PointCollection points = new PointCollection(pointsArray);
                 Point pixels = hexLayout.HexToPixel(hex);
                 Polygon currentHex = new Polygon
                 {
