@@ -4,8 +4,8 @@
              xmlns:hex ="clr-namespace:HexamauiAppSample"
              x:Class="HexamauiAppSample.MainPage">
     <ContentPage.Resources>
-        <hex:HexagonBorder x:Key="HexagonBorder"/>
-        <hex:HexGridTest x:Key="HexGridTest" />
+        <!--hex:HexagonBorder x:Key="HexagonBorder"/-->
+        <hex:HexGridTest x:Key="HexGridTest"/>
     </ContentPage.Resources>
 
     <!-- https://learn.microsoft.com/en-us/dotnet/maui/user-interface/layouts/?view=net-maui-8.0#absolutelayout -->
