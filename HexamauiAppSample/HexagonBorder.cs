@@ -119,15 +119,11 @@ namespace HexamauiAppSample
             AbsoluteLayout absoluteLayout = new AbsoluteLayout();
             absoluteLayout.VerticalOptions = LayoutOptions.Center;
             absoluteLayout.HorizontalOptions = LayoutOptions.Center;
-            absoluteLayout.MaximumHeightRequest = 1000;
-            absoluteLayout.MaximumWidthRequest = 1000;
             Point center = new(absoluteLayout.X, absoluteLayout.Y);
-            Point size = new Point(60, 60);
-            HexagonLayout hexLayout = new HexagonLayout(Orientation.PointyLayout, size, center);
-            List<Hex> hexes = new List<Hex>(5);
-            hexes = HexagonalGridShapes.GetMapShapes(hexes, GridOrientationConsts.PointyOrientation, HexagonalGridShapes.Hexagon);
-
-
+            Point size = new Point(60.0, 60.0);
+            HexagonLayout hexLayout = new HexagonLayout(Orientation.FlatLayout, size, center);
+            List<Hex> hexes = new List<Hex>(7);
+            hexes = HexagonalGridShapes.GetMapShapes(hexes, GridOrientationConsts.FlatOrientation, HexagonalGridShapes.Hexagon);
 
             hexes.ForEach(hex =>
             {
@@ -135,36 +131,49 @@ namespace HexamauiAppSample
                 Point[] pointsArray = Hexagon.HexagonPolygonCorners(hexLayout, hex).ToArray();
                 PointCollection points = new PointCollection(pointsArray);
                 Point pixels = hexLayout.HexToPixel(hex);
+
+                double height = Orientation.PointyLayout == hexLayout.HexOrientation ? 2 * size.Y : Math.Sqrt(3) * size.Y;
+                double width = Orientation.PointyLayout == hexLayout.HexOrientation ? Math.Sqrt(3) * size.X : 2 * size.X;
+                double strokeThickness = 3;
+
                 Polygon currentHex = new Polygon
                 {
-                    Frame = new(pixels.X, pixels.Y, size.X, size.Y),
                     Points = points,
                     Fill = Color.FromArgb("#2B0B98"),
                     Stroke = Color.FromArgb("#C49B33"),
                     Aspect = Stretch.Fill,
-                    StrokeThickness = 2,
-                    //HeightRequest = size.Y,
-                    //WidthRequest = size.X,
+                    //StrokeThickness = 2,
+                };
+                Border border = new Border
+                {
+                    Stroke = currentHex.Stroke,
+                    Padding = 0,
+                    Background = currentHex.Fill,
+                    StrokeThickness = strokeThickness,
                     TranslationX = pixels.X,
                     TranslationY = pixels.Y,
+                    HeightRequest = height - strokeThickness,
+                    WidthRequest = width - strokeThickness,
+                    StrokeShape = currentHex,
                 };
-
+                
                 //Tap Gesture Set-Up
                 TapGestureRecognizer HexagonTapGestureRecognizer = new TapGestureRecognizer
                 {
                     Buttons = ButtonsMask.Primary,
                 };
                 HexagonTapGestureRecognizer.Tapped += (s, e) => OnHexagonPrimaryTapped(s!, e); 
+                
                 TapGestureRecognizer HexagonSecondaryTapGestureRecognizer = new TapGestureRecognizer
                 {
                     Buttons = ButtonsMask.Secondary,
                 };
                 HexagonSecondaryTapGestureRecognizer.Tapped += (s, e) => OnHexagonSecondaryTapped(s!, e);
 
-                currentHex.GestureRecognizers.Add(HexagonTapGestureRecognizer);
-                currentHex.GestureRecognizers.Add(HexagonSecondaryTapGestureRecognizer);
+                border.GestureRecognizers.Add(HexagonTapGestureRecognizer);
+                border.GestureRecognizers.Add(HexagonSecondaryTapGestureRecognizer);
 
-                absoluteLayout.Children.Add(currentHex);
+                absoluteLayout.Children.Add(border);
             });
             AbsoluteLayoutVar = absoluteLayout;
         }
@@ -172,14 +181,14 @@ namespace HexamauiAppSample
         //following https://learn.microsoft.com/en-us/dotnet/maui/fundamentals/gestures/tap?view=net-maui-8.0#define-the-button-mask
         public void OnHexagonPrimaryTapped(object sender, TappedEventArgs e)
         {
-            Polygon hex = (Polygon)sender;
-            hex.Fill = Colors.LimeGreen;
+            Border hex = (Border)sender;
+            hex.Background = Colors.LimeGreen;
         }
 
         public void OnHexagonSecondaryTapped(object sender, TappedEventArgs e)
         {
-            Polygon hex = (Polygon)sender;
-            hex.Fill = Colors.Red;
+            Border hex = (Border)sender;
+            hex.Background = Colors.Red;
         }
 
 
